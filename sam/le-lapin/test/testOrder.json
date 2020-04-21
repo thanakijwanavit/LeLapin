@@ -1,0 +1,27 @@
+{
+    "deliveryDate": "608564366.634115",
+    "cart": {
+        "total": 888,
+        "orders": [
+            {
+                "base": {
+                    "name": "testFood",
+                    "foodType": "Type",
+                    "price": "123"
+                },
+                "topping": [],
+                "totalPrice": 888
+            }
+        ],
+        "cartId": "12345cartId"
+    },
+    "user": {
+        "email": "nwanavit@gmail.com",
+        "phoneNumber": "0816684442",
+        "mapLink": "google.com",
+        "name": "nic",
+        "lineID": "1234",
+        "address": "address"
+    },
+    "purchaseOrderId": "some purchase id"
+}

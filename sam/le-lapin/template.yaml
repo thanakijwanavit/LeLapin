@@ -1,0 +1,81 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  le-lapin
+
+  Sample SAM Template for le-lapin
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 3
+
+Resources:
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: hello_world/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+  SendEmailFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: send_email/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+  SubmitOrderFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: submit_order/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+  GenOrderTable:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: gen_order_table/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+  CustomerEmail:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: customer_email/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+  LapinEmail:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: lapin_email/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  #HelloWorldApi:
+    #Description: "API Gateway endpoint URL for Prod stage for Hello World function"
+    #Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
+  HelloWorldFunction:
+    Description: "Hello World Lambda Function ARN"
+    Value: !GetAtt HelloWorldFunction.Arn
+  HelloWorldFunctionIamRole:
+    Description: "Implicit IAM Role created for Hello World function"
+    Value: !GetAtt HelloWorldFunctionRole.Arn
+  CustomerEmail:
+    Description: "Hello World Lambda Function ARN"
+    Value: !GetAtt CustomerEmail.Arn
+  LapinEmail:
+    Description: "Hello World Lambda Function ARN"
+    Value: !GetAtt LapinEmail.Arn
+  SendEmailFunction:
+    Description: "send email to customer and clients"
+    Value: !GetAtt SendEmailFunction.Arn
+  SubmitOrderFunction:
+    Description: "Submit order from app"
+    Value: !GetAtt SubmitOrderFunction.Arn
+  GenOrderTable:
+    Description: "Hello World Lambda Function ARN"
+    Value: !GetAtt GenOrderTable.Arn
+  #HelloWorldFunctionIamRole:
+    #Description: "Implicit IAM Role created for Hello World function"
+    #Value: !GetAtt HelloWorldFunctionRole.Arn

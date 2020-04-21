@@ -1,0 +1,30 @@
+type PurchaseOrder{
+    cart:[Cart]
+    user:User
+    purchaseOrderId:String // generated randomly using UUID implemented in the app
+    deliveryDate:Float //Seconds after (00:00:00 UTC on 1 January 2001)
+
+}
+
+
+
+type Food {
+    foodType: String //plz choose between foodType in dynamodb [additionalTopping, mainDish, recommendedMenu, topping]
+    name: String
+    cat: String
+    imageLink: String
+    price: String
+    longDescription: String
+    shortDescription: String
+}
+type Order {
+    base: Food!
+    topping: [Food]
+    totalPrice: Int
+}
+
+type Cart {
+    orders: [Order]
+    total: Int
+    cartID: String
+} 

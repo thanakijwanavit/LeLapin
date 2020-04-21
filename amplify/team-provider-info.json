@@ -1,0 +1,15 @@
+{
+    "lelapin": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-lelapin-lelapin-194152-authRole",
+            "UnauthRoleArn": "arn:aws:iam::277726656832:role/amplify-lelapin-lelapin-194152-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::277726656832:role/amplify-lelapin-lelapin-194152-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-lelapin-lelapin-194152-deployment",
+            "UnauthRoleName": "amplify-lelapin-lelapin-194152-unauthRole",
+            "StackName": "amplify-lelapin-lelapin-194152",
+            "StackId": "arn:aws:cloudformation:us-east-1:277726656832:stack/amplify-lelapin-lelapin-194152/55c6d210-7996-11ea-add1-0e28043c5c55",
+            "AmplifyAppId": "d3nrjgn2pea1lx"
+        }
+    }
+}
